@@ -1,0 +1,16 @@
+.App {
+  margin: 10px 10px;
+}
+
+.vin-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-words {
+  width: 83%;
+}
+
+.title {
+  text-align: center;
+}
