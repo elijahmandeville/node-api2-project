@@ -127,10 +127,19 @@ router.post("/:id/comments", (req, res) => {
       message: "Missing body text",
     });
   }
+
+  posts.findById(req.params.id).then((post) => {
+    if (!post) {
+      res.status(404).json({
+        message: "user not found",
+      });
+    }
+  });
+
   posts
     .insertComment({ text, post_id })
     .then((comment) => {
-      if (req.params) {
+      if (req.params.id) {
         res.status(201).json(comment);
       } else {
         res.status(400).json({

@@ -5,7 +5,7 @@ const welcomeRouter = require("./posts/welcome-router");
 const postsRouter = require("./posts/posts-router");
 const cors = require("cors");
 
-const port = 5000;
+const port = process.env.PORT || 4000;
 
 server.use(express.json());
 server.use(cors());
